@@ -1,0 +1,24 @@
+<table class="cal" id="time-grid-table">
+  <thead>
+    <tr>
+      <th class="time-grid-project">Project</th>
+      <th class="time-grid-issue">Type of Issue</th>
+      <th class="time-grid-issue">State</th>
+      <th class="time-grid-issue">User Responsible</th>
+      <th class="time-grid-issue"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @flows.each do |flow| %> 
+      <tr style="height: 25px;!important">
+        <td><%= Project.where(id:flow.id_project).first.name %></td>
+        <td><%= Tracker.where(id:flow.id_trackers).first.name %></td>
+        <td><%= IssueStatus.where(id:flow.id_state).first.name %></td>
+        <td><%= User.where(id:flow.id_user).first.name %></td>
+        <td class="buttons">
+        <%= link_to 'Delete', { :action => 'delete', :id => flow.id },method: :post,class:"icon icon-del", data: { confirm: "Delete Flow?" } %>  
+        </td>
+      </tr>  
+    <% end %>
+  </tbody>
+</table>

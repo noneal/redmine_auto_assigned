@@ -1,0 +1,12 @@
+= auto_assigned_status
+v 0.1
+Automate issue assignment flows
+
+1 - Copy the plugin
+
+2 - rake redmine:plugins:migrate
+
+3 - restart redmine
+
+2 - Administration - > Automatic Issue Assignment
+

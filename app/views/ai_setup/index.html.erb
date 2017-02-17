@@ -1,0 +1,40 @@
+<h3>Automatic Issue Assignment</h3>
+<hr>
+<br>   
+<fieldset><legend>Modify the Issue Assignments</legend>
+   <%= form_tag("as-issues/change") do %>
+        <label>Project</label>
+        <select name="id_project">  
+        	  <% @projects.each do |p| %>
+			     <option value="<%= p.id %>"> <%= p.name %></option>
+			  <% end %>
+        </select>
+
+        <label>Type</label>
+        <select name="id_trackers">  
+              <% @trackers.each do |t| %>
+                 <option value="<%= t.id %>"> <%= t.name %></option>
+              <% end %>
+        </select>
+
+        <label>State</label>
+        <select name="id_state">  
+        	  <% @states.each do |e| %>
+			     <option value="<%= e.id %>"> <%= e.name %></option>
+			  <% end %>
+        </select>       
+        
+        <label>User</label>
+        <select name="id_user">  
+        	  <% @users.each do |u| %>
+			     <option value="<%= u.id %>"> <%= u.name %></option>
+			  <% end %>
+        </select>
+     
+        <input type="submit" value="SAVE"/>
+  <% end %>
+</fieldset>
+<br>
+<fieldset><legend>Assignment Flows</legend>
+  <%= render :partial => 'list' %>
+</fieldset>
