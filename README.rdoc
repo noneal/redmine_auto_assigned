@@ -1,5 +1,7 @@
 = auto_assigned_status
 v 0.1
+Works with Redmine 2.2.4
+
 Automate issue assignment flows
 
 1 - Copy the plugin
