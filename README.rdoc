@@ -1,9 +1,14 @@
-= auto_assigned_status
+= Automate issue assignment flows
+Auto Assigns issues to a user when the assigned user field is blank.
+Uses a table of issue types and status flows to assign it to users. 
+
+
+== auto_assigned_status
 v 0.1
 Works with Redmine 2.2.4
 
-Automate issue assignment flows
 
+= Setup 
 1 - Copy the plugin
 
 2 - rake redmine:plugins:migrate
