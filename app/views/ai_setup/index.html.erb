@@ -1,40 +1,40 @@
-<h3>Automatic Issue Assignment</h3>
+<h3><%= l(:label_auto_assignments) %></h3>
 <hr>
 <br>   
-<fieldset><legend>Modify the Issue Assignments</legend>
+<fieldset><legend><%= l(:label_edit_auto_assignments) %></legend>
    <%= form_tag("as-issues/change") do %>
-        <label>Project</label>
+        <label><%= l(:label_project) %></label>
         <select name="id_project">  
         	  <% @projects.each do |p| %>
 			     <option value="<%= p.id %>"> <%= p.name %></option>
 			  <% end %>
         </select>
 
-        <label>Type</label>
+        <label><%= l(:label_tracker) %></label>
         <select name="id_trackers">  
               <% @trackers.each do |t| %>
                  <option value="<%= t.id %>"> <%= t.name %></option>
               <% end %>
         </select>
 
-        <label>State</label>
+        <label><%= l(:label_status) %></label>
         <select name="id_state">  
         	  <% @states.each do |e| %>
 			     <option value="<%= e.id %>"> <%= e.name %></option>
 			  <% end %>
         </select>       
         
-        <label>User</label>
+        <label><%= l(:label_user) %></label>
         <select name="id_user">  
         	  <% @users.each do |u| %>
 			     <option value="<%= u.id %>"> <%= u.name %></option>
 			  <% end %>
         </select>
      
-        <input type="submit" value="SAVE"/>
+        <input type="submit" value="<%= l(:button_save) %>"/>
   <% end %>
 </fieldset>
 <br>
-<fieldset><legend>Assignment Flows</legend>
+<fieldset><legend><%= l(:label_auto_assignment_flows) %></legend>
   <%= render :partial => 'list' %>
 </fieldset>
