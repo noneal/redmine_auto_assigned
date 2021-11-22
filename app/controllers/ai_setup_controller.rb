@@ -6,7 +6,7 @@ class AiSetupController < ApplicationController
       @users  = User.all
       @trackers   = Tracker.all
       #puts @projects
-      @flows    = Autoasigned.all.order "id_project desc"
+      @flows    = Autoasigned.all.order(id_project: :desc)
   end
 
   def change
