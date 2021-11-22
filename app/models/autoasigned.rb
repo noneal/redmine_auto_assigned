@@ -1,5 +1,5 @@
 class Autoasigned < ActiveRecord::Base
-  
-  attr_accessible :project, :state,:user
-
+  def autoassigned_params
+    params.require(:autoassigned).permit(:project, :state,:user)
+  end
 end
