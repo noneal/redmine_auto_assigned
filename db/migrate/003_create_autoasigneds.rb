@@ -1,4 +1,4 @@
-class CreateAutoasigneds < ActiveRecord::Migration
+class CreateAutoasigneds < ActiveRecord::Migration[4.2]
   def change
     create_table :autoasigneds do |t|
       t.integer :id_project

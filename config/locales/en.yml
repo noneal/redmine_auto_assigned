@@ -1,3 +1,9 @@
 # English strings go here for Rails i18n
 en:
-  my_label: "My label"
+  label_auto_assignments: Auto Assignments
+  label_edit_auto_assignments: Edit auto assignments
+  label_auto_assignment_flows: Auto assignment flows
+  notice_remove_flow: Delete flow?
+  flow_created: Flow created.
+  flow_updated: Flow updated.
+  flow_deleted: Flow deleted.

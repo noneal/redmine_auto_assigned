@@ -6,7 +6,7 @@ class AiSetupController < ApplicationController
       @users  = User.all
       @trackers   = Tracker.all
       #puts @projects
-      @flows    = Autoasigned.all.order "id_project desc"
+      @flows    = Autoasigned.all.order(id_project: :desc)
   end
 
   def change
@@ -24,7 +24,7 @@ class AiSetupController < ApplicationController
          flows.id_trackers  = id_trackers
          flows.id_user  = id_user
          if flows.save
-            flash[:notice] = 'Flow Created.'
+            flash[:notice] = l(:flow_created)
          end
          redirect_to :action => 'index'
          return
@@ -32,7 +32,7 @@ class AiSetupController < ApplicationController
 
       flows.id_user = id_user
       if flows.save
-            flash[:notice] = 'Flow Updated.'
+            flash[:notice] = l(:flow_updated)
       end
       redirect_to :action => 'index'
   end
@@ -41,7 +41,7 @@ class AiSetupController < ApplicationController
   def delete
      id  = params[:id]
      Autoasigned.destroy(id)
-     flash[:notice] = 'Flow Deleted.'
+     flash[:notice] = l(:flow_deleted)
      redirect_to :action => 'index'
   end
 

@@ -1,11 +1,11 @@
 <table class="cal" id="time-grid-table">
   <thead>
     <tr>
-      <th class="time-grid-project">Project</th>
-      <th class="time-grid-issue">Type of Issue</th>
-      <th class="time-grid-issue">State</th>
-      <th class="time-grid-issue">User Responsible</th>
-      <th class="time-grid-issue"></th>
+      <th class="time-grid-project"><%= l(:label_project) %></th>
+      <th class="time-grid-issue"><%= l(:label_tracker) %></th>
+      <th class="time-grid-issue"><%= l(:label_status) %></th>
+      <th class="time-grid-issue"><%= l(:field_default_assigned_to) %></th>
+      <th class="time-grid-issue"><%= l(:label_action) %></th>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +16,7 @@
         <td><%= IssueStatus.where(id:flow.id_state).first.name %></td>
         <td><%= User.where(id:flow.id_user).first.name %></td>
         <td class="buttons">
-        <%= link_to 'Delete', { :action => 'delete', :id => flow.id },method: :post,class:"icon icon-del", data: { confirm: "Delete Flow?" } %>  
+        <%= link_to l(:button_delete), { :action => 'delete', :id => flow.id },method: :post,class:"icon icon-del", data: { confirm: l(:notice_remove_flow) } %>
         </td>
       </tr>  
     <% end %>
